@@ -4,7 +4,7 @@ import ModalBodyLP from './ModalBodyLP';
 
 export default function ModalContentLP(){
     return (
-        <div class="modal-content-lp">
+        <div className="modal-content-lp">
             <ModalHeaderLP/>
             <ModalBodyLP/>
         </div>
