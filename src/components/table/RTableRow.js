@@ -34,6 +34,10 @@ export default function RTableRow({ tone, ru }) {
     }, []);
 
 
+    const handleClick = () => {
+        console.log('hello kuni');
+    }
+
     return (
         <div className={`rTableRow ${ru}`}>
             {
@@ -41,7 +45,7 @@ export default function RTableRow({ tone, ru }) {
                     if (element === 'X') {
                         return <div className="rTableCell rTable26Tone ru20" key={uuid()}>{element}</div>
                     }
-                    return <div className={`rTableCell rTable${tone}Tone ru20 ruavilable`} key={uuid()}>{element}</div>
+                    return <div className={`rTableCell rTable${tone}Tone ru20 ruavilable`} key={uuid()} onClick={handleClick}>{element}</div>
                 })
             }
         </div>
