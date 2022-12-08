@@ -4,7 +4,12 @@ export default function ModalBodyLP() {
     return (
         <div className="modal-body-lp" style={{ maxHeight: '50vh' }}>
             <div id="rus-table" className="rTable">
-                <RTableRow cellNumScale={[0,36]} rowNum={0}/>
+                <RTableRow ru={''} tone={26}/>
+                <RTableRow ru={''} tone={52}/>
+                <RTableRow ru={''} tone={106}/>
+                <RTableRow ru={''} tone={242}/>
+                <RTableRow ru={'ru40'} tone={484}/>
+                <RTableRow ru={'ru80'} tone={996}/>
                 {/* <RTableRow cellNum={37} rowNum={0}/> */}
                 {/* <div className="rTableRow">
                     <div className="rTableCell rTable26Tone ru20 ruavilable">0</div>
@@ -45,7 +50,7 @@ export default function ModalBodyLP() {
                     <div className="rTableCell rTable26Tone ru80 ruavilable">35</div>
                     <div className="rTableCell rTable26Tone ru80 ruavilable">36</div>
                 </div> */}
-                <div className="rTableRow">
+                {/* <div className="rTableRow">
                     <div className="rTableCell rTable52Tone ru20 ruavilable">37</div>
                     <div className="rTableCell rTable52Tone ru20 ruavilable">38</div>
                     <div className="rTableCell rTable26Tone ru20">X</div>
@@ -67,8 +72,8 @@ export default function ModalBodyLP() {
                     <div className="rTableCell rTable26Tone ru80">X</div>
                     <div className="rTableCell rTable52Tone ru80 ruavilable">51</div>
                     <div className="rTableCell rTable52Tone ru80 ruavilable">52</div>
-                </div>
-                <div className="rTableRow">
+                </div> */}
+                {/* <div className="rTableRow">
                     <div className="rTableCell rTable106Tone ru20 ruavilable">53</div>
                     <div className="rTableCell rTable26Tone ru20">X</div>
                     <div className="rTableCell rTable106Tone ru20 ruavilable">54</div>
@@ -82,22 +87,22 @@ export default function ModalBodyLP() {
                     <div className="rTableCell rTable106Tone ru80 ruavilable">59</div>
                     <div className="rTableCell rTable26Tone ru80">X</div>
                     <div className="rTableCell rTable106Tone ru80 ruavilable">60</div>
-                </div>
-                <div className="rTableRow">
+                </div> */}
+                {/* <div className="rTableRow">
                     <div className="rTableCell rTable242Tone ru20 ruavilable">61</div>
                     <div className="rTableCell rTable242Tone ru40 ruavilable">62</div>
                     <div className="rTableCell rTable26Tone ru80">X</div>
                     <div className="rTableCell rTable242Tone ru80 ruavilable">63</div>
                     <div className="rTableCell rTable242Tone ru80 ruavilable">64</div>
-                </div>
-                <div className="rTableRow ru40">
+                </div> */}
+                {/* <div className="rTableRow ru40">
                     <div className="rTableCell rTable484Tone ru40 ruavilable">65</div>
                     <div className="rTableCell rTable26Tone ru80">X</div>
                     <div className="rTableCell rTable484Tone ru80 ruavilable">66</div>
-                </div>
-                <div className="rTableRow ru80">
+                </div> */}
+                {/* <div className="rTableRow ru80">
                     <div className="rTableCell rTable996Tone ru80 ruavilable">67</div>
-                </div>
+                </div> */}
             </div>
             <div className="rus-title">Users:</div>
             <div id="users-table" className="rTable">

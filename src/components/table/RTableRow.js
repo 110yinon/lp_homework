@@ -1,14 +1,47 @@
+import { useEffect, useState } from 'react';
+import uuid from 'react-uuid';
 
-export default function RTableRow({ cellNumScale, rowNum }) {
-    const length = cellNumScale[1] - cellNumScale[0];//36-0=36
-    const arr1 = [...Array(length + 1)];//37
-    
+export default function RTableRow({ tone, ru }) {
+
+    const [arr, setArr] = useState([]);
+    // const arr1 = [...Array(37)]; // 0 - 36    
+    // const arr2 = [37, 38, 'X', 39, 40, 41, 42, 'X', 43, 44, 'X', 45, 46, 'X', 47, 48, 49, 50, 'X', 51, 52];
+    // const arr3 = [53, 'X', 54, 55, 'X', 56, 'X', 57, 'X', 58, 59, 'X', 60];
+    // const arr4 = [61, 62, 'X', 63, 64];
+    // const arr5 = [65, 'X', 66];
+    // const arr6 = [67];
+    useEffect(() => {
+        switch (tone) {
+            case 26:
+                setArr([...Array(37)].map((e, i) => i)); // 0 - 36
+                break;
+            case 52:
+                setArr([37, 38, 'X', 39, 40, 41, 42, 'X', 43, 44, 'X', 45, 46, 'X', 47, 48, 49, 50, 'X', 51, 52]);
+                break;
+            case 106:
+                setArr([53, 'X', 54, 55, 'X', 56, 'X', 57, 'X', 58, 59, 'X', 60]);
+                break;
+            case 242:
+                setArr([61, 62, 'X', 63, 64]);
+                break;
+            case 484:
+                setArr([65, 'X', 66]);
+                break;
+            case 996:
+                setArr([67]);
+                break;
+        }
+    }, []);
+
 
     return (
-        <div className="rTableRow kuni">
+        <div className={`rTableRow ${ru}`}>
             {
-                arr1.map((element, index) => {
-                    return <div className="rTableCell rTable26Tone ru20 ruavilable" key={index + cellNumScale[0]}>{index + cellNumScale[0]}</div>                    
+                arr.map(element => {
+                    if (element === 'X') {
+                        return <div className="rTableCell rTable26Tone ru20" key={uuid()}>{element}</div>
+                    }
+                    return <div className={`rTableCell rTable${tone}Tone ru20 ruavilable`} key={uuid()}>{element}</div>
                 })
             }
         </div>
