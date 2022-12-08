@@ -1,10 +1,12 @@
-
+import RTableRow from "../table/RTableRow";
 
 export default function ModalBodyLP() {
     return (
         <div className="modal-body-lp" style={{ maxHeight: '50vh' }}>
             <div id="rus-table" className="rTable">
-                <div className="rTableRow">
+                <RTableRow cellNumScale={[0,36]} rowNum={0}/>
+                {/* <RTableRow cellNum={37} rowNum={0}/> */}
+                {/* <div className="rTableRow">
                     <div className="rTableCell rTable26Tone ru20 ruavilable">0</div>
                     <div className="rTableCell rTable26Tone ru20 ruavilable">1</div>
                     <div className="rTableCell rTable26Tone ru20 ruavilable">2</div>
@@ -42,7 +44,7 @@ export default function ModalBodyLP() {
                     <div className="rTableCell rTable26Tone ru80 ruavilable">34</div>
                     <div className="rTableCell rTable26Tone ru80 ruavilable">35</div>
                     <div className="rTableCell rTable26Tone ru80 ruavilable">36</div>
-                </div>
+                </div> */}
                 <div className="rTableRow">
                     <div className="rTableCell rTable52Tone ru20 ruavilable">37</div>
                     <div className="rTableCell rTable52Tone ru20 ruavilable">38</div>
