@@ -1,4 +1,5 @@
 import RTableRow from "../table/RTableRow";
+import UsersTable from "../usersTable/UsersTable";
 
 export default function ModalBodyLP() {
     return (
@@ -105,7 +106,8 @@ export default function ModalBodyLP() {
                 </div> */}
             </div>
             <div className="rus-title">Users:</div>
-            <div id="users-table" className="rTable">
+            <UsersTable/>
+            {/* <div id="users-table" className="rTable">
                 <div className="rTableHeading">
                     <div className="rTableHead paramCell56">User #</div>
                     <div className="rTableHead paramCell70">RU Index</div>
@@ -117,7 +119,7 @@ export default function ModalBodyLP() {
                     <div className="rTableHead paramCell116">Delete User</div>
                 </div>
                 <div className="rTableBody"></div>
-            </div>
+            </div> */}
         </div>
     );
 }
