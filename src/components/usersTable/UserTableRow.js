@@ -6,16 +6,16 @@ import SSS from "./paramCells/SSS";
 import WIFIcode from "./paramCells/WIFIcode";
 
 
-export default function UserTableRow() {
+export default function UserTableRow({user,index}) {
     return (
         <div className="rTableRow">
-            <div className="rTableCell paramCell56 noBorder ruTaken1">1</div>
-            <RUindex ruIndex={777} userindex={18} fieldindex={26} />
-            <DataRate userindex={18} fieldindex={26} />
-            <DCM userindex={18} fieldindex={26} />
-            <WIFIcode userindex={18} fieldindex={26} />
-            <NSS userindex={18} fieldindex={26}/>
-            <SSS userindex={18} fieldindex={26}/>
+            <div className="rTableCell paramCell56 noBorder ruTaken1">{index+1}</div>
+            <RUindex ruIndex={user} userindex={index} fieldindex={0} />
+            <DataRate userindex={index} fieldindex={1} />
+            <DCM userindex={index} fieldindex={2} />
+            <WIFIcode userindex={index} fieldindex={3} />
+            <NSS userindex={index} fieldindex={4}/>
+            <SSS userindex={index} fieldindex={5}/>
             <div userindex="0" className="rTableCell noBorder clickable paramCell116">X</div>            
         </div>
     );
