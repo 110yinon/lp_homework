@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import uuid from 'react-uuid';
 
-export default function RTableRow({ tone, ru }) {
+export default function RTableRow({ tone, ruAtt }) {
 
     const [arr, setArr] = useState([]);
     // const arr1 = [...Array(37)]; // 0 - 36    
@@ -39,7 +39,7 @@ export default function RTableRow({ tone, ru }) {
     }
 
     return (
-        <div className={`rTableRow ${ru}`}>
+        <div className={`rTableRow ${ruAtt}`}>
             {
                 arr.map(element => {
                     if (element === 'X') {

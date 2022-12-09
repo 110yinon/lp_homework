@@ -5,12 +5,12 @@ export default function ModalBodyLP() {
     return (
         <div className="modal-body-lp" style={{ maxHeight: '50vh' }}>
             <div id="rus-table" className="rTable">
-                <RTableRow ru={''} tone={26}/>
-                <RTableRow ru={''} tone={52}/>
-                <RTableRow ru={''} tone={106}/>
-                <RTableRow ru={''} tone={242}/>
-                <RTableRow ru={'ru40'} tone={484}/>
-                <RTableRow ru={'ru80'} tone={996}/>
+                <RTableRow ruAtt={''} tone={26}/>
+                <RTableRow ruAtt={''} tone={52}/>
+                <RTableRow ruAtt={''} tone={106}/>
+                <RTableRow ruAtt={''} tone={242}/>
+                <RTableRow ruAtt={'ru40'} tone={484}/>
+                <RTableRow ruAtt={'ru80'} tone={996}/>
                 {/* <RTableRow cellNum={37} rowNum={0}/> */}
                 {/* <div className="rTableRow">
                     <div className="rTableCell rTable26Tone ru20 ruavilable">0</div>
