@@ -42,7 +42,7 @@ export function UsersProvider({ children }) {
         users: [
             // users: ['bb', 'sara'],
             { RUindex: 'bb the king', DataRate: 10, DCM: false, WIFICode: 0, nSS: 1, sSS: 1 },
-            { RUindex: 'sara the queen', DataRate: 4, DCM: false, WIFICode: 0, nSS: 1, sSS: 1 }
+            { RUindex: 'sara the queen', DataRate: 4, DCM: true, WIFICode: 0, nSS: 1, sSS: 1 }
         ]
     });
 
@@ -58,9 +58,13 @@ export function UsersProvider({ children }) {
         dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, DataRate: dataRate } });
     }
 
+    const setDCM = (ruIndex, dcm) => {
+        console.log('setDCM:', ruIndex, dcm);
+        dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, DCM: dcm } });
+    }
 
     return (
-        <UsersContext.Provider value={{ ...state, setDataRate, addUser }}>
+        <UsersContext.Provider value={{ ...state, setDCM, setDataRate, addUser }}>
             {children}
         </UsersContext.Provider>
     );
