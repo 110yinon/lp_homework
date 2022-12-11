@@ -14,7 +14,7 @@ export default function UsersTableBody() {
         <div className="rTableBody">
             <UserTableRow key={uuid()} user={'kuni test'} index={7777} />
             {/* {ruUsers.map((ruUser, i) => <UserTableRow key={uuid()} user={ruUser} index={i} />)} */}
-            {users && users.map((user, i) => <UserTableRow key={uuid()} ruindex={user.RUindex} index={i} />)}
+            {users && users.map((user, i) => <UserTableRow key={uuid()} user={user} index={i} />)}
         </div>
     );
 }

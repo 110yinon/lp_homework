@@ -41,8 +41,8 @@ export function UsersProvider({ children }) {
     const [state, dispatch] = useReducer(usersReducer, {
         users: [
             // users: ['bb', 'sara'],
-            { RUindex: 'bb the king', DataRate: 7, DCM: false, WIFICode: 0, nSS: 1, sSS: 1 },
-            { RUindex: 'sara the queen', DataRate: 7, DCM: false, WIFICode: 0, nSS: 1, sSS: 1 }
+            { RUindex: 'bb the king', DataRate: 10, DCM: false, WIFICode: 0, nSS: 1, sSS: 1 },
+            { RUindex: 'sara the queen', DataRate: 4, DCM: false, WIFICode: 0, nSS: 1, sSS: 1 }
         ]
     });
 

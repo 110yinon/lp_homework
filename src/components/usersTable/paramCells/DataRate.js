@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import uuid from 'react-uuid';
 import { UsersContext } from "../../../context/UsersContext";
 
-export default function DataRate({ ruIndex, userindex, fieldindex }) {
+export default function DataRate({ ruIndex, userindex, fieldindex, dataRate }) {
     const [mcs, setMsc] = useState([...Array(12)]);
 
     const { setDataRate } = useContext(UsersContext);
@@ -14,7 +14,7 @@ export default function DataRate({ ruIndex, userindex, fieldindex }) {
 
     return (
         <div className="rTableCell noBorder paramCell116">
-            <select userindex={userindex} fieldindex={fieldindex} onChange={handleChange}>
+            <select defaultValue={dataRate} userindex={userindex} fieldindex={fieldindex} onChange={handleChange}>
                 {mcs.map((e, i) => {
                     return <option key={uuid()} value={i} >{`MCS${i}`}</option>
                 })}
