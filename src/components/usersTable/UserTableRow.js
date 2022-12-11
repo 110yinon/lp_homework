@@ -23,7 +23,7 @@ export default function UserTableRow({ user, index }) {
             <RUindex ruIndex={user.RUindex} userindex={index} fieldindex={0} />
             <DataRate ruIndex={user.RUindex} userindex={index} fieldindex={1} dataRate={user.DataRate} />
             <DCM ruIndex={user.RUindex} userindex={index} fieldindex={2} dcmval={user.DCM}/>
-            <WIFIcode userindex={index} fieldindex={3} />
+            <WIFIcode ruIndex={user.RUindex} userindex={index} fieldindex={3} wifiCode={user.WIFICode}/>
             <NSS userindex={index} fieldindex={4} />
             <SSS userindex={index} fieldindex={5} />
             <div userindex="0" className="rTableCell noBorder clickable paramCell116">X</div>
