@@ -29,6 +29,12 @@ export const usersReducer = (state, action) => {
             console.log('users:', users);
             return { users: users };
 
+        case 'DELETE_USER':
+            console.log('dispatch - DELETE_USER, state before:', state);
+            let usersAfterDelete = state.users.filter(user => user.RUindex !== action.payload.RUindex);
+            console.log('dispatch - DELETE_USER, state after:', usersAfterDelete);
+            return { users: usersAfterDelete }
+
         default:
             return state;
     }
@@ -70,18 +76,23 @@ export function UsersProvider({ children }) {
 
 
     const setNss = (ruIndex, nss) => {
-        console.log('setNSS:', ruIndex, nss);
+        console.log('setNss:', ruIndex, nss);
         dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, nSS: nss } });
     }
 
     const setSss = (ruIndex, sss) => {
-        console.log('setNSS:', ruIndex, sss);
+        console.log('setSss:', ruIndex, sss);
         dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, sSS: sss } });
     }
 
 
+    const deleteUser = (ruIndex) => {
+        console.log('deleteUser:', ruIndex);
+        dispatch({ type: 'DELETE_USER', payload: { RUindex: ruIndex } });
+    }
+
     return (
-        <UsersContext.Provider value={{ ...state, setSss, setNss, setWIFICode, setDCM, setDataRate, addUser }}>
+        <UsersContext.Provider value={{ ...state, deleteUser, setSss, setNss, setWIFICode, setDCM, setDataRate, addUser }}>
             {children}
         </UsersContext.Provider>
     );

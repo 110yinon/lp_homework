@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { UsersContext } from "../../context/UsersContext";
 import DataRate from "./paramCells/DataRate";
 import DCM from "./paramCells/DCM";
+import DeleteUser from "./paramCells/DeleteUser";
 import NSS from "./paramCells/NSS.js";
 import RUindex from "./paramCells/RUindex";
 import SSS from "./paramCells/SSS";
@@ -26,7 +27,7 @@ export default function UserTableRow({ user, index }) {
             <WIFIcode ruIndex={user.RUindex} userindex={index} fieldindex={3} wifiCode={user.WIFICode}/>
             <NSS ruIndex={user.RUindex} userindex={index} fieldindex={4} nSSval={user.nSS}/>
             <SSS ruIndex={user.RUindex} userindex={index} fieldindex={5} sSSval={user.sSS}/>
-            <div userindex="0" className="rTableCell noBorder clickable paramCell116">X</div>
+            <DeleteUser ruIndex={user.RUindex} userindex={index}/>
         </div>
     );
 }
