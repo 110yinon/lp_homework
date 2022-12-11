@@ -6,15 +6,15 @@ import { UsersContext } from '../../context/UsersContext';
 export default function UsersTableBody() {
 
     const [ruUsers, setRuUsers] = useState([55, 14, 4]);
-    const { users, kunifunc } = useContext(UsersContext);
-
-    console.log('users:', users);
+    const { users } = useContext(UsersContext);
+    
+    // console.log('users:', users[1].RUindex);
 
     return (
         <div className="rTableBody">
-            <button onClick={kunifunc}>click</button>
             <UserTableRow key={uuid()} user={'kuni test'} index={7777} />
-            {ruUsers.map((ruUser, i) => <UserTableRow key={uuid()} user={ruUser} index={i} />)}
+            {/* {ruUsers.map((ruUser, i) => <UserTableRow key={uuid()} user={ruUser} index={i} />)} */}
+            {users && users.map((user, i) => <UserTableRow key={uuid()} ruindex={user.RUindex} index={i} />)}
         </div>
     );
 }

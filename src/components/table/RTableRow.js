@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import uuid from 'react-uuid';
+import { UsersContext } from '../../context/UsersContext';
 
 export default function RTableRow({ tone, ruAtt }) {
 
+    const { addUser } = useContext(UsersContext);
     const [arr, setArr] = useState([]);
     // const arr1 = [...Array(37)]; // 0 - 36    
     // const arr2 = [37, 38, 'X', 39, 40, 41, 42, 'X', 43, 44, 'X', 45, 46, 'X', 47, 48, 49, 50, 'X', 51, 52];
@@ -34,9 +36,11 @@ export default function RTableRow({ tone, ruAtt }) {
     }, []);
 
 
-    const handleClick = () => {
-        console.log('hello kuni');
-    }
+
+    // const handleClick = () => {
+    //     console.log('hello kuni');
+    //     addUser(678);
+    // }
 
     return (
         <div className={`rTableRow ${ruAtt}`}>
@@ -45,7 +49,7 @@ export default function RTableRow({ tone, ruAtt }) {
                     if (element === 'X') {
                         return <div className="rTableCell rTable26Tone ru20" key={uuid()}>{element}</div>
                     }
-                    return <div className={`rTableCell rTable${tone}Tone ru20 ruavilable`} key={uuid()} onClick={handleClick}>{element}</div>
+                    return <div className={`rTableCell rTable${tone}Tone ru20 ruavilable`} key={uuid()} onClick={()=>{addUser(element)}}>{element}</div>
                 })
             }
         </div>
