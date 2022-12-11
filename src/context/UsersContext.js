@@ -41,7 +41,7 @@ export function UsersProvider({ children }) {
     const [state, dispatch] = useReducer(usersReducer, {
         users: [
             // users: ['bb', 'sara'],
-            { RUindex: 'bb the king', DataRate: 10, DCM: false, WIFICode: 1, nSS: 3, sSS: 1 },
+            { RUindex: 'bb the king', DataRate: 10, DCM: false, WIFICode: 1, nSS: 3, sSS: 4 },
             { RUindex: 'sara the queen', DataRate: 4, DCM: true, WIFICode: 0, nSS: 2, sSS: 1 }
         ]
     });
@@ -74,9 +74,14 @@ export function UsersProvider({ children }) {
         dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, nSS: nss } });
     }
 
+    const setSss = (ruIndex, sss) => {
+        console.log('setNSS:', ruIndex, sss);
+        dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, sSS: sss } });
+    }
+
 
     return (
-        <UsersContext.Provider value={{ ...state, setNss, setWIFICode, setDCM, setDataRate, addUser }}>
+        <UsersContext.Provider value={{ ...state, setSss, setNss, setWIFICode, setDCM, setDataRate, addUser }}>
             {children}
         </UsersContext.Provider>
     );

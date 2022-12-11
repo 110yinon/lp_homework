@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import uuid from 'react-uuid';
+import { UsersContext } from "../../../context/UsersContext";
                 
 
-export default function SSS({ userindex, fieldindex }) {
+export default function SSS({ ruIndex, userindex, fieldindex, sSSval }) {
 
     const [values, setValues] = useState([1,2,3,4]);
+    const { setSss } = useContext(UsersContext);
+    
+    const handleChange = (e) => {
+        console.log('handle change:', e.target.value);
+        setSss(ruIndex, e.target.value); // sended ru index and sSS value
+    }
 
     return (
     <div className="rTableCell noBorder paramCell70">
-            <select userindex={userindex} fieldindex={fieldindex}>
+            <select defaultValue={sSSval} userindex={userindex} fieldindex={fieldindex} onChange={handleChange}>
             {values.map( e => <option key={uuid()} value={e}>{e}</option>)}
             
                 {/* <option value="1">1</option>
