@@ -67,8 +67,14 @@ export const usersReducer = (state, action) => {
 
         case 'DELETE_USER':
             console.log('dispatch - DELETE_USER, state before:', state);
-            let usersAfterDelete = state.users.filter(user => user.RUindex !== action.payload.RUindex);
+            // remove the user obj with filter techinque
+            const usersAfterDelete = state.users.filter(user => user.RUindex !== action.payload.RUindex);
             console.log('dispatch - DELETE_USER, state after:', usersAfterDelete);
+
+            // remove the ru from color obj with filter techinque
+            const colorObj = state.colorsToRUs.find(item => item.ru === action.payload.RUindex);
+            colorObj.ru = -1;
+            
             return {
                 users: usersAfterDelete,
                 colorsToRUs: [...state.colorsToRUs]
