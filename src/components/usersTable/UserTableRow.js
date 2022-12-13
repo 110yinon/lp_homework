@@ -11,7 +11,9 @@ import WIFIcode from "./paramCells/WIFIcode";
 
 export default function UserTableRow({ user, index }) {
 
-    const { users, dispatch } = useContext(UsersContext);
+    const { colorsToRUs } = useContext(UsersContext);
+    
+    const [colorToRu] = colorsToRUs.filter(item => item.ru == user.RUindex);
     
     // gives the specific user object
     // const [user] = users.filter(user => ruindex === user.RUindex);
@@ -20,7 +22,7 @@ export default function UserTableRow({ user, index }) {
 
     return (
         <div className="rTableRow">
-            <div className="rTableCell paramCell56 noBorder ruTaken1">{index + 1}</div>
+            <div className={`rTableCell paramCell56 noBorder ruTaken${colorToRu ? colorToRu.colorNum : 16}`}>{index + 1}</div>
             <RUindex ruIndex={user.RUindex} userindex={index} fieldindex={0} />
             <DataRate ruIndex={user.RUindex} userindex={index} fieldindex={1} dataRate={user.DataRate} />
             <DCM ruIndex={user.RUindex} userindex={index} fieldindex={2} dcmval={user.DCM}/>

@@ -73,8 +73,10 @@ export const usersReducer = (state, action) => {
 
             // remove the ru from color obj with filter techinque
             const colorObj = state.colorsToRUs.find(item => item.ru === action.payload.RUindex);
-            colorObj.ru = -1;
-            
+            if(colorObj){
+                colorObj.ru = -1;
+            }
+
             return {
                 users: usersAfterDelete,
                 colorsToRUs: [...state.colorsToRUs]
