@@ -47,9 +47,13 @@ export function UsersProvider({ children }) {
     const [state, dispatch] = useReducer(usersReducer, {
         users: [
             // users: ['bb', 'sara'],
-            { RUindex: 'bb the king', DataRate: 10, DCM: false, WIFICode: 1, nSS: 3, sSS: 4 },
-            { RUindex: 'sara the queen', DataRate: 4, DCM: true, WIFICode: 0, nSS: 2, sSS: 1 }
+            { ruTakenColor: 1, RUindex: 'bb the king', DataRate: 10, DCM: false, WIFICode: 1, nSS: 3, sSS: 4 },
+            { ruTakenColor: 2, RUindex: 'sara the queen', DataRate: 4, DCM: true, WIFICode: 0, nSS: 2, sSS: 1 }
         ]
+        // opt 2 to rutaken color - not implement yet
+        // ,colorsToRUs: [[...Array(15)].map((e, i) => { 
+        //     return { colorNum: i + 1, ru: ''} 
+        // })] // init arr 1 - 15 items
     });
 
     const addUser = (ruIndex) => {
