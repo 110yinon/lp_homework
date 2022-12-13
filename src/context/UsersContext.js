@@ -109,7 +109,7 @@ export function UsersProvider({ children }) {
     const addUser = (ruIndex) => {
         console.log('addUser:', ruIndex);
         dispatch({
-            type: 'ADD_USER', payload: { RUindex: ruIndex, DataRate: 7, DCM: false, WIFICode: 0, nSS: 1, sSS: 1 }
+            type: 'ADD_USER', payload: { RUindex: ruIndex, DataRate: '7', DCM: false, WIFICode: '0', nSS: '1', sSS: '1' }
         });
     }
 
