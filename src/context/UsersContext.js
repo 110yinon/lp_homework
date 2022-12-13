@@ -6,13 +6,46 @@ export const usersReducer = (state, action) => {
 
     switch (action.type) {
         case 'ADD_USER':
-            console.log('dispatch - ADD_USER:', state);
-            // state.users = [...state.users, action.payload];
-            // console.log('dispatch - state.users:', state.users);
-            // return state;
-            // state.users
+            console.log('dispatch - ADD_USER');
+
+            // check from user exist:
+            const alreayUser = state.users.find(user => user.RUindex === action.payload.RUindex);
+            console.log('alreayUser:', alreayUser);
+            // user already exist
+            if (alreayUser) {
+                return {
+                    users: [...state.users],
+                    colorsToRUs: [...state.colorsToRUs]
+                }
+            }
+            // user does not exist - added new user:
+
+            // searching color num w/o ru
+            const emptyColorObj = state.colorsToRUs.find(item => item.ru === -1);
+            // no empty color - all colors have attached ru's
+            if (!emptyColorObj) {
+                return {
+                    users: [...state.users, action.payload],
+                    colorsToRUs: [...state.colorsToRUs]
+                }
+            }
+            // set ru to the empty color
+            emptyColorObj.ru = action.payload.RUindex;
+
+
+            // switching the new attached ru color with the empty one
+            // const newColorsToRUs = state.colorsToRUs.map(item => {
+            //     if (item.ru === emptyColorObj.ru) {
+            //         return emptyColorObj;
+            //     }
+            //     return item;
+            // });
+            // console.log('newColorsToRUs:', newColorsToRUs);
+
+
             return {
-                users: [...state.users, action.payload]
+                users: [...state.users, action.payload], // added the new user
+                colorsToRUs: [...state.colorsToRUs]
             }
             break;
         case 'EDIT_USER':
@@ -27,13 +60,19 @@ export const usersReducer = (state, action) => {
                 return user;
             })
             console.log('users:', users);
-            return { users: users };
+            return {
+                users: users,
+                colorsToRUs: [...state.colorsToRUs]
+            };
 
         case 'DELETE_USER':
             console.log('dispatch - DELETE_USER, state before:', state);
             let usersAfterDelete = state.users.filter(user => user.RUindex !== action.payload.RUindex);
             console.log('dispatch - DELETE_USER, state after:', usersAfterDelete);
-            return { users: usersAfterDelete }
+            return {
+                users: usersAfterDelete,
+                colorsToRUs: [...state.colorsToRUs]
+            }
 
         default:
             return state;
@@ -47,13 +86,16 @@ export function UsersProvider({ children }) {
     const [state, dispatch] = useReducer(usersReducer, {
         users: [
             // users: ['bb', 'sara'],
-            { ruTakenColor: 1, RUindex: 'bb the king', DataRate: 10, DCM: false, WIFICode: 1, nSS: 3, sSS: 4 },
-            { ruTakenColor: 2, RUindex: 'sara the queen', DataRate: 4, DCM: true, WIFICode: 0, nSS: 2, sSS: 1 }
+            { RUindex: 'bb the king', DataRate: 10, DCM: false, WIFICode: 1, nSS: 3, sSS: 4 },
+            { RUindex: 'sara the queen', DataRate: 4, DCM: true, WIFICode: 0, nSS: 2, sSS: 1 }
         ]
-        // opt 2 to rutaken color - not implement yet
-        // ,colorsToRUs: [[...Array(15)].map((e, i) => { 
-        //     return { colorNum: i + 1, ru: ''} 
-        // })] // init arr 1 - 15 items
+        // , colorsToRUs: [{ colorNum: 1, ru: '67' }, { colorNum: 2, ru: '54' }]
+
+
+        // opt 2 to rutaken color
+        , colorsToRUs: [...Array(15)].map((e, i) => {
+            return { colorNum: i + 1, ru: -1 }
+        }) // init arr 1 - 15 items, colorsToRUs: [ {colorNum: 1, ru:''}, {colorNum: 2, ru:''}, ...]
     });
 
     const addUser = (ruIndex) => {
