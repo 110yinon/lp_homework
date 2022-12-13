@@ -17,18 +17,11 @@ export default function ModalHeaderLP() {
     }, [users]);
 
     // printing json array of users
-    const handleClick = () => {
-
-        // deleting the ruTakenColor field from each user object - OPT 1
-        users.forEach(user => {
-            delete user.ruTakenColor;
-        });
+    const handleClick = () => {        
         console.log('users from done:', users);
-
-        // deleting the ruTakenColor field from each user object - OPT 2
-        // const kuni = users.map(user => { delete user.ruTakenColor; return user; }) //ruTakenColor
-        // console.log('users from done:', kuni);
-    }
+        const usersJson = JSON.stringify(users);
+        console.log('users as JSON:', usersJson);
+}
     return (
         <div className="modal-header-lp">
             <h2>
