@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { UsersContext } from "../../../context/UsersContext";
+import '../../table/RTableCell.css';
 
 export default function DeleteUser({ ruIndex, userindex }) {
     const { deleteUser } = useContext(UsersContext);

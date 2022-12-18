@@ -1,5 +1,6 @@
 import ModalHeaderLP from './ModalHeaderLP';
 import ModalBodyLP from './ModalBodyLP';
+import './ModalContentLP.css';
 
 
 export default function ModalContentLP(){

@@ -1,3 +1,4 @@
+import './UsersTableHeading.css';
 
 export default function UsersTableHeading() {
     return (

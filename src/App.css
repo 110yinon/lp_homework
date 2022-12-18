@@ -1,16 +1,6 @@
 
 
-.modal-lp {
-    position: fixed; /* Stay in place */
-    z-index: 999999; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-  }
+
   
   /* Add Animation */
   @-webkit-keyframes animatetopTC {
@@ -24,24 +14,7 @@
   }
   
 
-  /* Modal Content */
-  .modal-content-lp {
-    background-color: rgba(68, 70, 79);
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    /* background-color: #fefefe; */
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    z-index: 1000;
-  }
+
   
   /* Add Animation */
   @-webkit-keyframes animatetop {
@@ -55,34 +28,24 @@
   }
   
   
-  .modal-header-lp {
-    padding: 2px 16px;
-    background-color: orange;
-    color: white;
-  }
+
   
-  .modal-body-lp {
-    padding: 2px 16px;
-    color: white;
-  }
+
   
   .modal-footer-lp {
     padding: 2px 16px;
     background-color: orange;
     color: white;
   }
-.rus-title {
-    margin-top:30px;
-    text-align:center;
- }
-.rTable {
+
+.rTable { /* ModalBodyLP, UsersTable */
    margin: 0 auto;
    display: block;
 }
-.rTableHeading, .rTableBody, .rTableFoot, .rTableRow{
+.rTableHeading, .rTableBody, .rTableFoot, .rTableRow{ /* rTableRow, UsersTableHeading, UsersTableBody, UserTableRow */
    clear: both;
 }
-.rTableHead, .rTableFoot{
+.rTableHead, .rTableFoot{ /* UsersTableHeading */
    font-weight: bold;
    color: black !important;
 }
@@ -91,7 +54,7 @@
 	border: 0px !important;
 	text-align:center;
 }
-.rTableCell
+.rTableCell /* rTableCell, UserTableRow */
 {
 border: 1px solid #999999;   
 }
@@ -103,106 +66,11 @@ border: 1px solid #999999;
    margin: 0px;
    text-align:center;
 }
-.rTable26Tone
-{
-	width:20px;
-}
-.rTable52Tone
-{
-	width:42px;
-}
-.rTable106Tone
-{
-	width:86px;
-}
-.rTable242Tone
-{
-	width:196px;
-}
-.rTable484Tone
-{
-	width:394px;
-}
-.rTable996Tone
-{
-	width:812px;
-}
-.clickable,.ruavilable
+.clickable,.ruavilable /* rTableCell */
 {
 	cursor:pointer;
 }
-.paramCell56
-{
-	width:56px;
-}
-.paramCell70
-{
-	width:70px;
-}
-.paramCell116
-{
-	width:116px;
-}
+
 .hidden{
 	display:none;
 }
-.ruTaken1
- {
-     background-color:green;
- }
- .ruTaken2
- {
-     background-color:red;
- }
- .ruTaken3
- {
-     background-color:blue;
- }
- .ruTaken4
- {
-     background-color:yellow;
- }
- .ruTaken5
- {
-     background-color:purple;
- }
- .ruTaken6
- {
-     background-color:pink;
- }
- .ruTaken7
- {
-     background-color:orange;
- }
- .ruTaken8
- {
-     background-color:orangered;
- }
- .ruTaken9
- {
-     background-color:blueviolet;
- }
- .ruTaken10
- {
-     background-color:palevioletred;
- }
- .ruTaken11
- {
-     background-color:greenyellow;
- }
- .ruTaken12
- {
-     background-color:goldenrod;
- }
- .ruTaken13
- {
-     background-color:paleturquoise;
- }
- .ruTaken14
- {
-     background-color:turquoise;
- }
- .ruTaken15
- {
-     background-color:whitesmoke;
- }

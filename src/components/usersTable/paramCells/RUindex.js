@@ -1,3 +1,4 @@
+import '../../table/RTableCell.css';
 
 export default function RUindex({ ruIndex, userindex, fieldindex }) {
     return (

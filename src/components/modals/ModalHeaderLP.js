@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { UsersContext } from "../../context/UsersContext";
+import './ModalHeaderLP.css';
 
 
 export default function ModalHeaderLP() {

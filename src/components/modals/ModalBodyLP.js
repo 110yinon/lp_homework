@@ -1,5 +1,6 @@
 import RTableRow from "../table/RTableRow";
 import UsersTable from "../usersTable/UsersTable";
+import './ModalBodyLP.css';
 
 export default function ModalBodyLP() {
     return (

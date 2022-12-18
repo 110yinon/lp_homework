@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import uuid from 'react-uuid';
 import { UsersContext } from '../../context/UsersContext';
 import RTableCell from './RTableCell';
+import './RTableRow.css';
 
 export default function RTableRow({ tone, ruAtt }) {
 

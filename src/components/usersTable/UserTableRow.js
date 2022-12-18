@@ -7,7 +7,8 @@ import NSS from "./paramCells/NSS.js";
 import RUindex from "./paramCells/RUindex";
 import SSS from "./paramCells/SSS";
 import WIFIcode from "./paramCells/WIFIcode";
-
+import './UsersTableHeading.css' // for the paramCell1156
+import '../table/RTableCell.css' // for the ruTaken colors
 
 export default function UserTableRow({ user, index }) {
 

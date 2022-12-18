@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import uuid from 'react-uuid';
 import { UsersContext } from "../../../context/UsersContext";
+import '../../table/RTableCell.css';
                 
 
 export default function SSS({ ruIndex, userindex, fieldindex, sSSval }) {

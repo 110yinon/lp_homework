@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { UsersContext } from "../../context/UsersContext";
 // import uuid from 'react-uuid';
-
+import './RTableCell.css';
 
 export default function RTableCell({ element, tone }) {
 
