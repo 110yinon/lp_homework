@@ -11,6 +11,10 @@ export default function DeleteUser({ ruIndex, userindex }) {
     return (
         <div userindex={userindex}
             onClick={handleClick}
-            className="rTableCell noBorder clickable paramCell116">X</div>
+            className="rTableCell noBorder clickable paramCell116">
+            <span className="material-symbols-outlined" style={{fontSize: '16px'}}>
+                delete
+            </span>
+        </div>
     );
 }
