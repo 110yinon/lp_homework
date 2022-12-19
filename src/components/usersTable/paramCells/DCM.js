@@ -14,10 +14,13 @@ export default function DCM({ ruIndex, userindex, fieldindex, dcmval }) {
 
     return (
         <div className="rTableCell noBorder paramCell70">
-            <input type="checkbox" userindex={userindex} fieldindex={fieldindex}
-                checked={dcmval}
-                // value={dcmval}
-                onChange={handleChange} />
+            <label className="container">
+                <input type="checkbox" userindex={userindex} fieldindex={fieldindex}
+                    checked={dcmval}
+                    // value={dcmval}
+                    onChange={handleChange} />
+                <span className="checkmark"></span>
+            </label>
         </div>
     );
 }
