@@ -21,7 +21,7 @@ export default function UserTableRow({ user, index }) {
 
 
     return (
-        <div className="rTableRow">
+        <div className="rTableRow borderBottom">
             <div className={`rTableCell paramCell56 noBorder ruTaken${colorToRu ? colorToRu.colorNum : 16}`}>{index + 1}</div>
             <RUindex ruIndex={user.RUindex} userindex={index} fieldindex={0} />
             <DataRate ruIndex={user.RUindex} userindex={index} fieldindex={1} dataRate={user.DataRate} />
