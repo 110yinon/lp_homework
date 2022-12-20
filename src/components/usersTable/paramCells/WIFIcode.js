@@ -1,25 +1,47 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import uuid from 'react-uuid';
 import { UsersContext } from "../../../context/UsersContext";
 
 
 export default function WIFIcode({ ruIndex, userindex, fieldindex, wifiCode }) {
-    const [values, setValues] = useState(['BCC', 'LDPC']);
+
     const { setWIFICode } = useContext(UsersContext);
 
-    const handleChange = (e) => {
-        console.log('handle change:', e.target.value);
-        setWIFICode(ruIndex, e.target.value); // sended ru index and wifi code value
+    const wfCodes = [
+        { val: '0', name: 'BCC' },
+        { val: '1', name: 'LDPC' }
+    ];
+    useEffect(() => {
+        console.log('wifiCode:', wifiCode);
+        // get the matched item from the list above
+        const [item] = wfCodes.filter(item => item.val === wifiCode);
+        console.log(item.val);
+        setSelected(item);
+    }, [wifiCode]);
+
+    const [selected, setSelected] = useState('BCC');
+    const [showList, setShowList] = useState(false);
+
+    const handleClickList = () => {
+        setShowList(!showList);
+    }
+    const handleClickItem = (e) => {
+        console.log('adam');
+        // console.dir(e.target.attributes['valNum'].value);
+        const itemVal = e.target.attributes['valNum'].value;
+        console.log(`${itemVal}`);
+        setShowList(!showList);
+        setWIFICode(ruIndex, itemVal); // sended ru index and wifi code value
     }
 
     return (
-        <div className="rTableCell noBorder paramCell116">
-            <select defaultValue={wifiCode} userindex={userindex} fieldindex={fieldindex} onChange={handleChange}>
-                {values.map((e, i) => <option key={uuid()} value={i}>{e}</option>)}
-                
-                {/* <option value="0">BCC</option>
-                <option value="1">LDPC</option> */}
-            </select>
+        <div className="rTableCell noBorder paramCell116 custom-select">
+            <div className="select-selected" userindex={userindex} fieldindex={fieldindex} onClick={handleClickList}>{selected.name}</div>
+            <span className="arrow-bg"></span>
+            {showList && <div className="select-items">
+                <div key={uuid()} valnum={0} onClick={handleClickItem}>{'BCC'}</div>
+                <div key={uuid()} valnum={1} onClick={handleClickItem}>{'LDPC'}</div>
+            </div>}
         </div>
     );
 }

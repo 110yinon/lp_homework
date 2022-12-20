@@ -1,3 +1,52 @@
+.arrow-bg{
+  content: "";
+  background-color: black;
+  opacity: 0.3;
+  width: 21px;
+  height: 22px;
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  border-radius: 5px;
+}
+.select-selected {
+  border: 1px solid grey;
+  /* border-radius: 5px; */
+  cursor: pointer;
+  background-color: #292929;
+  padding: 5px;
+  user-select: none;  
+}
+/*arrow shape*/
+.select-selected:after {
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  content: "";
+  top: 12px;
+  right: 8px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+.select-items {
+  /* background-color: red; */
+  background-color: #292929;
+  position: absolute;
+  z-index: 2;
+  width: inherit;
+  /* border-radius: 5px; */
+}
+.select-items div {
+  border: 1px solid grey;
+}
+.select-items div:hover {
+  cursor: pointer;
+  /* background-color: brown; */
+  opacity: 0.5;
+}
+
 /*for the checkmark to take effect*/
 .rTableCell{
   position: relative; 
@@ -166,7 +215,7 @@ border: 1px solid #999999;
 .rTableCell, .rTableHead {
    float: left;
    height: 17px;
-   overflow: hidden;
+   /* overflow: hidden; */
    padding: 2px;
    margin: 0px;
    text-align:center;
