@@ -3,7 +3,7 @@ import { UsersContext } from "../../../context/UsersContext";
 
 export default function DeleteUser({ ruIndex, userindex }) {
     const { deleteUser } = useContext(UsersContext);
-    // console.log('userindex:', userindex);
+    
     const handleClick = () => {
         deleteUser(ruIndex);
     }

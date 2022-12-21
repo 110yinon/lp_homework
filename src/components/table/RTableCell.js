@@ -1,14 +1,12 @@
 import { useContext } from "react";
 import { UsersContext } from "../../context/UsersContext";
-// import uuid from 'react-uuid';
 
 
 export default function RTableCell({ element, tone }) {
 
     const { addUser, colorsToRUs } = useContext(UsersContext);
     // find the matched color for the already clicked ru (element)
-    const [colorToRu] = colorsToRUs.filter(item => item.ru == element);
-    // console.log(`colorToRu - ${element}:`, colorToRu);
+    const [colorToRu] = colorsToRUs.filter(item => item.ru == element);    
 
     if (element === 'X') {
         return (<div className="rTableCell rTable26Tone ru20" style={{backgroundColor: '#292929', color:'grey'}}>{element}</div>);

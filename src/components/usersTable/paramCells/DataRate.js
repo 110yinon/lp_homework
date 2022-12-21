@@ -7,9 +7,7 @@ export default function DataRate({ ruIndex, userindex, fieldindex, dataRate }) {
 
     const { setDataRate } = useContext(UsersContext);
     const handleChange = (e) => {
-        console.log('handle change:', e.target.value);
-        setDataRate(ruIndex, e.target.value); // sended ru index and data rate value
-        // dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, DataRate: e.target.value } });
+        setDataRate(ruIndex, e.target.value); // sended ru index and data rate value        
     }
 
     return (

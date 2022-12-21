@@ -5,10 +5,8 @@ import { UsersContext } from "../../../context/UsersContext";
 export default function DCM({ ruIndex, userindex, fieldindex, dcmval }) {
 
     const { setDCM } = useContext(UsersContext);
-    console.log('dcmval-prop:', dcmval);
 
-    const handleChange = (e) => {
-        // console.log('DCM:', !(e.target.checked));
+    const handleChange = () => {
         setDCM(ruIndex, !dcmval);
     }
 

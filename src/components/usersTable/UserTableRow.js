@@ -15,11 +15,6 @@ export default function UserTableRow({ user, index }) {
     // find the matched color for the user ru    
     const [colorToRu] = colorsToRUs.filter(item => item.ru == user.RUindex);
     
-    // gives the specific user object
-    // const [user] = users.filter(user => ruindex === user.RUindex);
-    console.log(user);
-
-
     return (
         <div className="rTableRow borderBottom">
             <div className={`rTableCell paramCell56 noBorder ${colorToRu ? `ruTaken${colorToRu.colorNum}` : ''}`}>{index + 1}</div>
