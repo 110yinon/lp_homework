@@ -6,7 +6,7 @@ import { UsersContext } from "../../context/UsersContext";
 export default function RTableCell({ element, tone }) {
 
     const { addUser, colorsToRUs } = useContext(UsersContext);
-    
+    // find the matched color for the already clicked ru (element)
     const [colorToRu] = colorsToRUs.filter(item => item.ru == element);
     // console.log(`colorToRu - ${element}:`, colorToRu);
 

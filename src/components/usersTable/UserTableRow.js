@@ -12,7 +12,7 @@ import WIFIcode from "./paramCells/WIFIcode";
 export default function UserTableRow({ user, index }) {
 
     const { colorsToRUs } = useContext(UsersContext);
-    
+    // find the matched color for the user ru    
     const [colorToRu] = colorsToRUs.filter(item => item.ru == user.RUindex);
     
     // gives the specific user object

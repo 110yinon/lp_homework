@@ -6,7 +6,7 @@ export default function ModalHeaderLP() {
     const [showBtn, setShowBtn] = useState(false);
     const { users } = useContext(UsersContext);
 
-    // checks for switching on/off the btn due to users arr
+    // if there is users in the arr - shows the btn
     useEffect(() => {
         if (users.length) {
             setShowBtn(true);

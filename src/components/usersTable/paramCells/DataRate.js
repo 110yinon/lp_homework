@@ -3,7 +3,7 @@ import uuid from 'react-uuid';
 import { UsersContext } from "../../../context/UsersContext";
 
 export default function DataRate({ ruIndex, userindex, fieldindex, dataRate }) {
-    const [mcs, setMsc] = useState([...Array(12)]);
+    const [mcs, setMsc] = useState([...Array(12)]); // OR -> [1,2,3...12]
 
     const { setDataRate } = useContext(UsersContext);
     const handleChange = (e) => {

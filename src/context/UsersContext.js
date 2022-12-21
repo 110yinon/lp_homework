@@ -6,26 +6,27 @@ export const usersReducer = (state, action) => {
 
     switch (action.type) {
         case 'ADD_USER':
-            console.log('dispatch - ADD_USER');
+            console.log('usersReducer - ADD_USER');
 
-            // check from user exist:
+            // check if the user to add is already exist:
             const alreayUser = state.users.find(user => user.RUindex === action.payload.RUindex);
             console.log('alreayUser:', alreayUser);
-            // user already exist
+            // user already exist - no need to add it
             if (alreayUser) {
                 return {
                     users: [...state.users],
                     colorsToRUs: [...state.colorsToRUs]
                 }
             }
-            // user does not exist - added new user:
+            // user does not exist - added the new user:
 
-            // searching color num w/o ru
+            // 1. attching color to new user ru num
+            // finds an empty color (w/o ru):
             const emptyColorObj = state.colorsToRUs.find(item => item.ru === -1);
             // no empty color - all colors have attached ru's
             if (!emptyColorObj) {
                 return {
-                    users: [...state.users, action.payload],
+                    users: [...state.users, action.payload], // 2. added the new user
                     colorsToRUs: [...state.colorsToRUs]
                 }
             }
@@ -44,14 +45,15 @@ export const usersReducer = (state, action) => {
 
 
             return {
-                users: [...state.users, action.payload], // added the new user
+                users: [...state.users, action.payload], // 2. added the new user
                 colorsToRUs: [...state.colorsToRUs]
             }
             break;
         case 'EDIT_USER':
-            console.log('dispatch - EDIT_USER:', state);
+            console.log('usersReducer - EDIT_USER:', state);
             let { users } = state;
             console.log('payload:', action.payload);
+            // update the edited obj's field value at the desire user obj 
             users = users.map(user => {
                 if (user.RUindex === action.payload.RUindex) {
                     console.log('match!!!:', user.RUindex);
@@ -61,20 +63,22 @@ export const usersReducer = (state, action) => {
             })
             console.log('users:', users);
             return {
-                users: users,
+                users: users, // update the state
                 colorsToRUs: [...state.colorsToRUs]
             };
 
         case 'DELETE_USER':
-            console.log('dispatch - DELETE_USER, state before:', state);
+            console.log('usersReducer - DELETE_USER, state before:', state);
             // remove the user obj with filter techinque
             const usersAfterDelete = state.users.filter(user => user.RUindex !== action.payload.RUindex);
-            console.log('dispatch - DELETE_USER, state after:', usersAfterDelete);
+            console.log('usersReducer - DELETE_USER, state after:', usersAfterDelete);
 
-            // remove the ru from color obj with filter techinque
+            // remove the ru from color obj with find technique
+            // gets direct ref to original obj
             const colorObj = state.colorsToRUs.find(item => item.ru === action.payload.RUindex);
+            // if there is color to the deleted user ru :
             if(colorObj){
-                colorObj.ru = -1;
+                colorObj.ru = -1; // release color from deleted user ru
             }
 
             return {
