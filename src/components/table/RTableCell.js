@@ -13,7 +13,7 @@ export default function RTableCell({ element, tone }) {
     if (element === 'X') {
         return (<div className="rTableCell rTable26Tone ru20" style={{backgroundColor: '#292929', color:'grey'}}>{element}</div>);
     }
-    return (<div className={`rTableCell rTable${tone}Tone ru20 ruavilable ruTaken${colorToRu ? colorToRu.colorNum : 16}`}
+    return (<div className={`rTableCell rTable${tone}Tone ru20 ruavilable ${colorToRu ? `ruTaken${colorToRu.colorNum}` : ''}`}
         onClick={
             () => {
                 addUser(element);
