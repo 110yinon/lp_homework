@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { UsersContext } from "../../../context/UsersContext";
 
 export default function DeleteUser({ ruIndex, userindex }) {
-    const { deleteUser } = useContext(UsersContext);
+    const { dispatch } = useContext(UsersContext);
     
-    const handleClick = () => {
-        deleteUser(ruIndex);
+    const handleClick = () => {        
+        dispatch({ type: 'DELETE_USER', payload: { RUindex: ruIndex } });
     }
 
     return (

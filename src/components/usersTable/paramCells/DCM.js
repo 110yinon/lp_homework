@@ -4,10 +4,10 @@ import { UsersContext } from "../../../context/UsersContext";
 
 export default function DCM({ ruIndex, userindex, fieldindex, dcmval }) {
 
-    const { setDCM } = useContext(UsersContext);
+    const { dispatch } = useContext(UsersContext);
 
     const handleChange = () => {
-        setDCM(ruIndex, !dcmval);
+        dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, DCM: !dcmval } });
     }
 
     return (

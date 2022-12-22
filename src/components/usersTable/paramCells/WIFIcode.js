@@ -5,10 +5,11 @@ import { UsersContext } from "../../../context/UsersContext";
 
 export default function WIFIcode({ ruIndex, userindex, fieldindex, wifiCode }) {
     const [values, setValues] = useState(['BCC', 'LDPC']);
-    const { setWIFICode } = useContext(UsersContext);
+    const { dispatch } = useContext(UsersContext);
 
     const handleChange = (e) => {
-        setWIFICode(ruIndex, e.target.value); // sended ru index and wifi code value
+        // sended ru index and wifi code value
+        dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, WIFICode: e.target.value } });
     }
 
     return (

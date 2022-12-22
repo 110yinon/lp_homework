@@ -6,10 +6,11 @@ import { UsersContext } from "../../../context/UsersContext";
 export default function SSS({ ruIndex, userindex, fieldindex, sSSval }) {
 
     const [values, setValues] = useState([1,2,3,4]);
-    const { setSss } = useContext(UsersContext);
+    const { dispatch } = useContext(UsersContext);
     
     const handleChange = (e) => {
-        setSss(ruIndex, e.target.value); // sended ru index and sSS value
+        // sended ru index and sSS value
+        dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, sSS: e.target.value } });
     }
 
     return (

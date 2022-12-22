@@ -6,10 +6,11 @@ import { UsersContext } from "../../../context/UsersContext";
 export default function NSS({ruIndex, userindex, fieldindex, nSSval }) {
 
     const [values, setValues] = useState([1,2,3,4]);
-    const { setNss } = useContext(UsersContext);
+    const { dispatch } = useContext(UsersContext);
 
     const handleChange = (e) => {
-        setNss(ruIndex, e.target.value); // sended ru index and nSS value     
+        // sended ru index and nSS value     
+        dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, nSS: e.target.value } });
     }
 
     return (

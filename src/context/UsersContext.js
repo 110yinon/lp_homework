@@ -88,40 +88,10 @@ export function UsersProvider({ children }) {
             return { colorNum: i + 1, ru: -1 }
         }) 
     });
-
-
-    const addUser = (ruIndex) => {
-        dispatch({
-            type: 'ADD_USER', payload: { RUindex: ruIndex, DataRate: '7', DCM: false, WIFICode: '0', nSS: '1', sSS: '1' }
-        });
-    }
-
-    const setDataRate = (ruIndex, dataRate) => {
-        dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, DataRate: dataRate } });
-    }
-
-    const setDCM = (ruIndex, dcm) => {
-        dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, DCM: dcm } });
-    }
-
-    const setWIFICode = (ruIndex, wificode) => {
-        dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, WIFICode: wificode } });
-    }
-
-    const setNss = (ruIndex, nss) => {
-        dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, nSS: nss } });
-    }
-
-    const setSss = (ruIndex, sss) => {
-        dispatch({ type: 'EDIT_USER', payload: { RUindex: ruIndex, sSS: sss } });
-    }
-
-    const deleteUser = (ruIndex) => {
-        dispatch({ type: 'DELETE_USER', payload: { RUindex: ruIndex } });
-    }
+    
 
     return (
-        <UsersContext.Provider value={{ ...state, deleteUser, setSss, setNss, setWIFICode, setDCM, setDataRate, addUser }}>
+        <UsersContext.Provider value={{ ...state, dispatch }}>
             {children}
         </UsersContext.Provider>
     );

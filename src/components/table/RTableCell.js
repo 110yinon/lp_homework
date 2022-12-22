@@ -4,7 +4,7 @@ import { UsersContext } from "../../context/UsersContext";
 
 export default function RTableCell({ element, tone }) {
 
-    const { addUser, colorsToRUs } = useContext(UsersContext);
+    const { dispatch, colorsToRUs } = useContext(UsersContext);
     // find the matched color for the already clicked ru (element)
     const [colorToRu] = colorsToRUs.filter(item => item.ru == element);    
 
@@ -14,7 +14,9 @@ export default function RTableCell({ element, tone }) {
     return (<div className={`rTableCell rTable${tone}Tone ru20 ruavilable ${colorToRu ? `ruTaken${colorToRu.colorNum}` : ''}`}
         onClick={
             () => {
-                addUser(element);
+                dispatch({
+                    type: 'ADD_USER', payload: { RUindex: element, DataRate: '7', DCM: false, WIFICode: '0', nSS: '1', sSS: '1' }
+                });
             }
         }>{element}</div>);
 
